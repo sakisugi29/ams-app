@@ -1,15 +1,15 @@
 # ams-app
 
 ## プロジェクト概要
-フリマアプリのクローンアプリケーションです。商品の出品・購入・いいね・コメント機能などを実装しています。
+勤怠管理アプリケーションです。一般ユーザーの出勤・退勤・休憩の打刻、勤怠の一覧・詳細確認、修正申請機能、管理者による勤怠承認・スタッフ管理機能などを実装しています。
 
 ## 環境構築
 
 ### Dockerビルド
 
 ```bash
-git clone https://github.com/sakisugi29/furima-app.git
-cd furima-app
+git clone https://github.com/sakisugi29/ams-app.git
+cd ams-app
 docker compose up -d --build
 ```
 
@@ -35,3 +35,7 @@ php artisan storage:link
 - MySQL 8.0.26
 - nginx 1.21.1
 - MailHog（メール認証）
+
+## テーブル仕様
+
+
