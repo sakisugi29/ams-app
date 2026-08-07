@@ -24,6 +24,12 @@ php artisan db:seed
 php artisan storage:link
 ​```
 
+## URL              
+
+- 開発環境: http://localhost/
+- phpMyAdmin: http://localhost:8080/
+- MailHog: http://localhost:8025/
+
 ## メール認証
 
 MailHogを使用しています。Docker起動時に自動的に立ち上がるため、追加の会員登録などは不要です。
