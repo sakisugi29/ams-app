@@ -10,7 +10,7 @@
 
 ​```bash
 docker compose up -d --build
-docker compose exec app bash
+docker compose exec php bash
 composer install
 cp .env.example .env
 ​```
