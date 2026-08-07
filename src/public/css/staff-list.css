@@ -1,0 +1,76 @@
+.main{
+    background-color:#F0EFF2 ;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.staff-list-container{
+    max-width: 900px;
+    margin: 0 auto;
+    padding-top: 90px;
+}
+
+.staff-list-title{
+    font-size:30px;
+    font-weight: bold;
+    border-left:8px solid  #000000 ;
+    padding-left: 20px;
+}
+
+.staff-list-table{
+    width:100%;
+    table-layout: fixed;
+    margin: 60px auto 0;
+    background-color: #FFFFFF;
+    border-radius:10px ;
+    text-align: center;
+}
+
+.staff-list-tr{
+    border-bottom:3px solid #E1E1E1;
+}
+
+.staff-list-th{
+    font-size:16px ;
+    font-weight: bold;
+    color:#737373;
+    letter-spacing: 0.15em;
+    align-items: center;
+    padding: 10px 0;
+}
+
+tr{
+    border-bottom:2px solid #E1E1E1;
+}
+
+.staff-list-td{
+    font-size:16px ;
+    font-weight: bold;
+    color:#737373;
+    letter-spacing: 0.15em;
+    align-items: center;
+    padding: 10px 0;
+}
+
+
+.staff-list-td a{
+    text-decoration: none;
+    font-size:16px ;
+    font-weight: bold;
+    color:#737373;
+    letter-spacing: 0.15em;
+    align-items: center;
+    padding: 10px 0;
+}
+
+@media (max-width: 850px) {
+    .staff-list-container{
+        width:70%;
+    }
+
+    .staff-list-td,
+    .staff-list-td a{
+    font-size:12px ;
+    }
+}

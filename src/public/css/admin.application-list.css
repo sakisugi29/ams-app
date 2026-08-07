@@ -1,0 +1,103 @@
+.main{
+    background-color:#F0EFF2 ;
+    min-height: 100vh;
+}
+
+.admin-application-container{
+    max-width:900px;
+    margin: 0 auto;
+    padding-top:80px;
+}
+
+.admin-application-title{
+    font-size:30px;
+    font-weight: bold;
+    border-left:8px solid  #000000 ;
+    padding-left: 20px;
+}
+
+.tab-container{
+    width:100%;
+    display: flex;
+    gap:120px;
+    border-bottom: 1px solid #000000;
+    padding-top: 40px;
+}
+
+.tab-item{
+    text-decoration: none;
+    font-size: 16px;
+    color: #000000;
+    letter-spacing:0.15em;
+    margin-bottom: 10px;
+    padding-left:60px;
+}
+
+.tab-active{
+    font-weight: bold;
+}
+
+.admin-application-table{
+    width:100%;
+    border-radius: 10px;
+    background-color:#FFFFFF ;
+    margin-top: 40px;
+}
+
+thead{
+    width:100%;
+}
+
+.admin-application-tr{
+    width:100%;
+    height: 30px;
+    border-bottom:3px solid #E1E1E1;
+}
+
+.application-list{
+    font-size:16px;
+    font-weight: bold;
+    color:#737373;
+    letter-spacing: 0.15em;
+    padding: 10px 30px 10px 20px;
+    text-align: left;
+}
+
+tbody{
+    width:100%;
+}
+
+.tr{
+    width:100%;
+    height:30px;
+    display: flex;
+    gap:20px;
+}
+
+.application-data{
+    font-size: 16px;
+    font-weight: bold;
+    color:#737373 ;
+    letter-spacing: 0.15em;
+    border-bottom: 2px solid #E1E1E1 ;
+    padding: 10px 20px 10px 20px;
+    text-align: left;
+}
+
+.application-data a{
+    text-decoration: none;
+    color: #000000;
+}
+
+@media (max-width: 850px) {
+    .admin-application-container{
+        width:80%;
+    }
+
+    .application-list,
+    .application-data{
+        white-space: nowrap;
+        font-size: 10px;
+        padding-right: 10px;
+    }
+}

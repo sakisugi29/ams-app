@@ -1,0 +1,63 @@
+.attendance-container{
+    max-width:1512px;
+    margin: 150px auto 0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.status{
+    width:100px;
+    height:40px;
+    border-radius:50px;
+    background-color:#C8C8C8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #696969;
+    font-size:18px;
+    font-weight: bold;
+}
+
+.current-date{
+    font-size:40px;
+    text-align: center;
+    margin-top:20px;
+}
+
+.current-time{
+    font-size:80px;
+    font-weight:bold;
+    text-align: center;
+    margin-top:20px;
+}
+
+.button-group{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 100px;
+}
+
+.button{
+    width:220px;
+    height:80px;
+    border-radius:20px;
+    background-color:#000000;
+    color:#FFFFFF;
+    font-size:32px;
+    font-weight:bold;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.finished-message{
+    letter-spacing: 0.15em;
+    font-size:26px;
+    font-weight:bold;
+    display:flex;
+    justify-content:center;
+    margin-top:40px;
+    padding-left:0.15em;
+}

@@ -1,0 +1,129 @@
+.main{
+    min-height: 100vh;
+}
+
+.attendance-report-container{
+    max-width: 900px;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+
+.attendance-report-title{
+    font-size: 24px;
+}
+
+.attendance-report-lead{
+    font-size:16px ;
+    font-weight: bold;
+    letter-spacing: 0.15em;
+}
+
+.attendance-summary-title{
+    font-size: 20px;
+}
+
+.attendance-summary,
+.attendance-detectAnomalies{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.summary-card,
+.count-card{
+    width:300px;
+    height: 100px;
+    border-radius: 10px;
+    border: 2px solid #CECBCA ;
+    background-color: #F4F5F5;
+}
+
+.summary-data-title,
+.count-title{
+    font-size: 14px;
+    font-weight: bold;
+    color: gray;
+    display: flex;
+    text-align: center;
+    justify-content: flex-start;
+    padding-top: 15px;
+    padding-left: 10px ;
+}
+
+.summary-data,
+.count-data{
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-left: 10px ;
+}
+
+.attendance-monthly-trend-title{
+    font-size: 20px;
+}
+
+.attendance-monthly-trend-table{
+    width: 100%;
+}
+
+.attendance-monthly-trend-tr{
+    border-bottom: 1px solid #CECBCA;
+    text-align: left;
+    padding-bottom: 10px;
+}
+
+.monthly-th{
+    padding-bottom: 10px;
+    font-size: 20px;
+}
+
+.monthly-th:nth-child(1) { width: 50%; }
+.monthly-th:nth-child(2) { width: 40%; }
+.monthly-th:nth-child(3) {
+    width: 10%;
+    text-align: right;
+}
+
+tr{
+    border-bottom: 1px solid #CECBCA;
+}
+
+.monthly-trend-data{
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.monthly-trend-data:nth-child(1) { width: 50%; }
+.monthly-trend-data:nth-child(2) { width: 40%; }
+.monthly-trend-data:nth-child(3) {
+    width: 10%;
+    text-align: right;
+}
+
+.attendance-anomaly-detection-title{
+    font-size: 20px;
+}
+
+.attendance-anomaly-detection-lead{
+    font-size: 14px;
+    font-weight: bold;
+    color: gray;
+    letter-spacing: 0.15em;
+}
+
+@media (max-width: 850px){
+    .attendance-report-container{
+    max-width: 80%;
+    }
+
+    .monthly-th{
+        font-size:14px ;
+        white-space: nowrap;
+    }
+
+    .monthly-trend-data{
+    font-size: 10px;
+    }
+}
