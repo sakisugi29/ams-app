@@ -121,6 +121,7 @@ MAIL_FROM_ADDRESS=任意のメールアドレス
 
 ## ER図
 
+<img width="822" height="843" alt="image" src="https://github.com/user-attachments/assets/4a263e61-bbb1-4fcd-b194-6693fed17808" />
 
 
 ## テストアカウント
