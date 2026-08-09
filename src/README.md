@@ -17,6 +17,15 @@ cp .env.example .env
 
 .envを開き環境変数を変更する
 
+```env
+DB_CONNECTION=mysql
+DB_HOST=mysql
+DB_PORT=3306
+DB_DATABASE=laravel_db
+DB_USERNAME=laravel_user
+DB_PASSWORD=laravel_pass
+​```
+
 ​```bash
 php artisan key:generate
 php artisan migrate
