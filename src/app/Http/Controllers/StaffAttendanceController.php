@@ -60,14 +60,27 @@ class StaffAttendanceController extends Controller
         $month = $request->query('month', now()->format('Y-m'));
         $currentMonth = \Carbon\Carbon::parse($month);
 
-        $attendances = $this->calculateBreakAndWorkHours(
+        $attendanceRecords = $this->calculateBreakAndWorkHours(
             AttendanceRecord::with('breaks')
                 ->where('user_id', $id)
                 ->whereYear('date', $currentMonth->year)
                 ->whereMonth('date', $currentMonth->month)
                 ->orderBy('date')
                 ->get()
-        );
+                )->keyBy(fn($attendance) => \Carbon\Carbon::parse($attendance->date)->format('Y-m-d'));
+
+        $attendances = collect(range(1, $currentMonth->daysInMonth))->map(function ($day) use ($currentMonth,$attendanceRecords, $user) {
+            $date = $currentMonth->copy()->day($day)->format('Y-m-d');
+            return $attendanceRecords->get($date, (object)[
+                    'id' => null,
+                    'date' => $date,
+                    'user_id' => $user->id,
+                    'clock_in' => null,
+                    'clock_out' => null,
+                    'break_total' => '',
+                    'work_hours' => '',
+                ]);
+        });
 
         $fileName = $user->name . '_' . $currentMonth->format('Y-m') . '.csv';
 
