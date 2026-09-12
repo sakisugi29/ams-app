@@ -39,7 +39,7 @@ class ApplicationController extends Controller
     {
 
         $correctionRequest = CorrectionRequest::with(['attendanceRecord','details'])
-            ->find($id);
+            ->findOrFail($id);
 
         return view('admin.application-detail',compact('correctionRequest'));
 
@@ -48,7 +48,7 @@ class ApplicationController extends Controller
     public function update($id)
     {
         $correctionRequest = CorrectionRequest::with(['attendanceRecord','details'])
-            ->find($id);
+            ->findOrFail($id);
 
         $attendanceRecord = $correctionRequest->attendanceRecord;
         $attendanceData = [];
@@ -79,6 +79,13 @@ class ApplicationController extends Controller
                 $break1->break_end = $breakData['break_end1'];
             }
             $break1->save();
+        }else{
+            if( isset($breakData['break_start1']) || isset($breakData['break_end1'])) {
+                $attendanceRecord->breaks()->create([
+                    'break_start' => $breakData['break_start1'] ?? null,
+                    'break_end' => $breakData['break_end1'] ?? null,
+                ]);
+            }
         }
 
         if ($breaks->count() > 1) {
