@@ -12,7 +12,7 @@ class AttendanceController extends Controller
 
 {
     use CalculatesAttendanceHours;
-    
+
     public function index()
     {
         $attendance = AttendanceRecord::where('user_id', auth()->id())
@@ -51,6 +51,10 @@ class AttendanceController extends Controller
             ->whereDate('date', today())
             ->first();
 
+        if(!$attendance || $attendance->status !== 'working') {
+            return redirect()->route('attendance.index');
+        }
+
         $attendance->update(['status' => 'on_break']); // 休憩中
             BreakTime::create([
                 'attendance_record_id' => $attendance->id,
@@ -66,8 +70,15 @@ class AttendanceController extends Controller
             ->whereDate('date', today())
             ->first();
 
+        if(!$attendance || $attendance->status !== 'on_break') {
+            return redirect()->route('attendance.index');
+        }
+
         $attendance->update(['status' => 'working']); // 出勤中に戻る
-        $attendance->breaks()->latest()->first()->update(['break_end' => now()]);
+
+        if($attendance->breaks()->exists()) {
+            $attendance->breaks()->latest()->first()->update(['break_end' => now()]);
+        }
 
     return redirect()->route('attendance.index');
     }
@@ -77,6 +88,10 @@ class AttendanceController extends Controller
         $attendance = AttendanceRecord::where('user_id', auth()->id())
             ->whereDate('date', today())
             ->first();
+
+        if(!$attendance || $attendance->status === 'finished') {
+            return redirect()->route('attendance.index');
+        }
 
         $attendance->update([
             'clock_out' => now(),
