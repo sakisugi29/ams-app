@@ -27,7 +27,7 @@ class SanctumAuthTest extends TestCase
             'date' => today()->format('Y-m-d'),
             'clock_in' => '09:00:00',
         ])->assertStatus(401)
-          ->assertJson(['message' => 'Unauthenticated.']);
+            ->assertJson(['message' => 'Unauthenticated.']);
 
         // 認証せずにPUT
         $this->putJson("/api/v1/attendance-records/{$attendance->id}", [
